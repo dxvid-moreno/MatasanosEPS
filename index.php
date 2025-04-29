@@ -134,6 +134,48 @@ require ("logica/Medico.php");
 			</div>
 		</div>
 	</div>
+	
+	<div class="row mt-3">
+				<div class="col">
+					<div class="card">
+						<div class="card-header"><h4>Citas</h4></div>
+						<div class="card-body">
+						<?php 
+						$Cita = new Cita();
+						$totalCitas = $Cita->consultarCitas();
+						?>
+
+						<table >
+						    <thead>
+						        <tr>
+						            <th>ID</th>
+						            <th>Fecha</th>
+						            <th>Hora</th>
+						            <th>Paciente</th>
+						            <th>Médico</th>
+						            <th>Consultorio</th>
+						        </tr>
+						    </thead>
+						    <tbody>
+						        <?php foreach($totalCitas as $cit): ?>
+						            <tr>
+						                <td><?php echo $cit->getId(); ?></td>
+						                <td><?php echo $cit->getFecha(); ?></td>
+						                <td><?php echo $cit->getHora(); ?></td>
+						                <td><?php echo $cit->getPaciente(); ?></td>
+						                <td><?php echo $cit->getMedico(); ?></td>
+						                <td><?php echo $cit->getConsultorio(); ?></td>
+						            </tr>
+						        <?php endforeach; ?>
+						    </tbody>
+						</table>
+	
+	    				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 
 
 
